@@ -42,12 +42,13 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', message => {
+
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  const args = message.content.slice(prefix.length).split(' ').join('').trim().split(/ +/);
+  const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
 
-  if (command === 'lakeland') {
-    client.commands.get('lakeland').execute(message, args);
+  if (command === 'map') {
+    client.commands.get('map').execute(message, args);
   }
 });
