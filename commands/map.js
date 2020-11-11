@@ -76,9 +76,11 @@ module.exports = {
 	              .setTimestamp();
                 return message.channel.send(mapEmbed);
         } else {
-        return message.channel.send('Nothing detected.')
+          return message.channel.send('Invalid selection.')
         }
-      });
+      }).catch(() => {
+        message.reply('No selection after 10 seconds. Request cancelled.')
+      })
     } else {
       message.channel.send(`Please select your current area (Example: !map Lakeland)`)
     }
