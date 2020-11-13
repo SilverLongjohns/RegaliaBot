@@ -51,6 +51,6 @@ client.on('message', message => {
   if (command === 'map') {
     client.commands.get('map').execute(message, args);
   } else if (command === 'raffle') {
-    client.commands.get('raffle').execute(message, args);
+    client.commands.get('raffle').execute(client, message, args);
   }
 });
