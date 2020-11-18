@@ -22,7 +22,13 @@ module.exports = {
     let time = args[0]
     // let actual_duration_hours = time * 3600000 //hour
     let actual_duration_hours = time * 60000 //minute
-    let prize = args[1]
+    let input = []
+
+    for (let i=1; i < args.length; i++){
+      input.push(args[i])
+    }
+
+    let prize = input.join(" ")
     
     const embed = new Discord.MessageEmbed()
     .setTitle(`Raffle for ${prize}!`)
