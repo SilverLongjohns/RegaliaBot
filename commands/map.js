@@ -23,7 +23,7 @@ module.exports = {
   await message.channel.send(callEmbed);
 
   await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
-    {max: 1, time: 5000}).then(collected => {
+    {max: 1, time: 30000}).then(collected => {
         if (collected.first().content.toLowerCase() == "a") {
           let mapEmbed = new Discord.MessageEmbed()
                 .setColor('#0099ff')
@@ -393,7 +393,7 @@ module.exports = {
         await message.channel.send(callEmbedB);
   
         await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
-          {max: 1, time: 5000}).then(collected => {
+          {max: 1, time: 30000}).then(collected => {
               if (collected.first().content.toLowerCase() == "a") {
                 let mapEmbed = new Discord.MessageEmbed()
                       .setColor('#0099ff')
@@ -454,7 +454,7 @@ module.exports = {
                 return message.channel.send('Invalid selection.')
               }
             }).catch(() => {
-              message.reply('No selection after 10 seconds. Request cancelled.')
+              message.reply('No selection after 30 seconds. Request cancelled.')
             })
       } else {
       message.channel.send("```Please select your location:\n1: Lakeland\n2: Amh Araeng\n3: Kholusia\n4: Il Mheg\n5: Raktika Greatwood\n6: Tempest```")

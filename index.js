@@ -120,6 +120,8 @@ client.on('message', message => {
     client.commands.get('raffle').execute(client, message, args);
   } else if (command === 'reactions') {
     client.commands.get('reactions').execute(message, args);
+  } else if (command === 'buffs') {
+    client.commands.get('buffs').execute(message, args);
   }
 });
 
