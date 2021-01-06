@@ -13,7 +13,7 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const chatID = '677938273967931407'
+const chatID = '787270961241522196'
 
 client.once('ready', () => {
   console.log('Ready!');
