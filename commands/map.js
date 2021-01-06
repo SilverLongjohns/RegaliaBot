@@ -457,7 +457,7 @@ module.exports = {
               message.reply('No selection after 30 seconds. Request cancelled.')
             })
       } else {
-      message.channel.send("```Please select your location:\n1: Lakeland\n2: Amh Araeng\n3: Kholusia\n4: Il Mheg\n5: Raktika Greatwood\n6: Tempest```")
+      message.channel.send("```Please select your location:\n!map 1: Lakeland\n!map 2: Amh Araeng\n!map 3: Kholusia\n!map 4: Il Mheg\n!map 5: Raktika Greatwood\n!map 6: Tempest```")
     }
   } 
 }
