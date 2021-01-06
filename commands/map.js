@@ -16,7 +16,7 @@ module.exports = {
 
   let callEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle("Lakeland selected, please choose your map:")
+        .setTitle("Lakeland selected, please reply with the letter of your choice:")
         .setImage("https://i.imgur.com/8Khirwm.png")
         .setTimestamp();
 
@@ -89,7 +89,7 @@ module.exports = {
     } else if (args[0] === "2") {
       let callEmbedB = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle("Amh Araeng selected, please choose your map:")
+        .setTitle("Amh Araeng selected, please reply with the letter of your choice:")
         .setImage("https://i.imgur.com/efUWKth.png")
         .setTimestamp();
 
@@ -165,7 +165,7 @@ module.exports = {
     } else if (args[0] === "3") {
       let callEmbedB = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle("Kholusia selected, please choose your map:")
+        .setTitle("Kholusia selected, please reply with the letter of your choice:")
         .setImage("https://i.imgur.com/9739Zwt.png")
         .setTimestamp();
 
@@ -238,7 +238,7 @@ module.exports = {
       } else if (args[0] === "4") {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
-          .setTitle("Il Mheg selected, please choose your map:")
+          .setTitle("Il Mheg selected, please reply with the letter of your choice:")
           .setImage("https://i.imgur.com/fvNIYIN.png")
           .setTimestamp();
   
@@ -311,7 +311,7 @@ module.exports = {
       } else if (args[0] === "5") {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
-          .setTitle("Raktika Greatwood selected, please choose your map:")
+          .setTitle("Raktika Greatwood selected, please reply with the letter of your choice:")
           .setImage("https://i.imgur.com/mEQbudw.png")
           .setTimestamp();
   
@@ -386,7 +386,7 @@ module.exports = {
 
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
-          .setTitle("Tempest selected, please choose your map:")
+          .setTitle("Tempest selected, please reply with the letter of your choice:")
           .setImage("https://i.imgur.com/rls3lSe.png")
           .setTimestamp();
   
