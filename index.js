@@ -135,7 +135,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
 
   if (reaction.message.channel.id === "806123826509381632") {
     if (reaction.emoji.name === "🏰"){
-      await reaction.message.guild.members.cache.get(user.id).roles.add("284216738575417344")
+      await reaction.message.guild.members.fetch(user.id).roles.add("284216738575417344")
     }
   }
 })
@@ -149,7 +149,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
 
   if (reaction.message.channel.id === "806123826509381632") {
     if (reaction.emoji.name === "🏰"){
-      await reaction.message.guild.members.cache.get(user.id).roles.remove("284216738575417344")
+      await reaction.message.guild.members.fetch(user.id).roles.remove("284216738575417344")
     }
   }
 })
