@@ -14,7 +14,7 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const chatID = '787270961241522196'
+const chatID = '512110863378022420'
 
 client.once('ready', () => {
   console.log('Ready!');
@@ -131,7 +131,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
   if (reaction.partial) await reaction.fetch();
 
   if (user.bot) return;
-  if (!reaction.message.guild) returnl
+  if (!reaction.message.guild) return1
 
   if (reaction.message.channel.id === "778608212219527228") {
     if (reaction.emoji.name === "👍"){
