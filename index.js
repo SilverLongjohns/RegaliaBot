@@ -134,7 +134,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
   if (!reaction.message.guild) return1
 
   if (reaction.message.channel.id === "778608212219527228") {
-    if (reaction.emoji.name === "👍"){
+    if (reaction.emoji.name === ":regalia:"){
       await reaction.message.guild.members.cache.get(user.id).roles.add("778611608406327317")
     }
   }
@@ -148,7 +148,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
   if (!reaction.message.guild) returnl
 
   if (reaction.message.channel.id === "778608212219527228") {
-    if (reaction.emoji.name === "👍"){
+    if (reaction.emoji.name === ":regalia:"){
       await reaction.message.guild.members.cache.get(user.id).roles.remove("778611608406327317")
     }
   }
