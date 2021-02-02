@@ -14,7 +14,7 @@ module.exports = {
 
     let msgEmbed = await message.channel.send(embed)
 
-    msgEmbed.react('<:regalia:806143180419629098>')
+    msgEmbed.react('🏰')
   }
 
 }
