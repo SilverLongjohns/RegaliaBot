@@ -118,9 +118,10 @@ client.on('message', message => {
   if (command === 'map') {
     client.commands.get('map').execute(message, args);
   } else if (command === 'raffle') {
-    if (!member.roles.cache.some(role => role.name === 'Seneschal')) return message.channel.send("You do not have the required permissions for that command.");
+    if (!message.member.roles.cache.some(role => role.name === 'Seneschal' || 'Architect' || 'Patriarch' || 'Matriarch')) return message.channel.send("You do not have the required permissions for that command.");
     client.commands.get('raffle').execute(client, message, args);
   } else if (command === 'reactions') {
+    if (!message.member.roles.cache.some(role => role.name === 'Patriarch' || 'Matriarch')) return message.channel.send("You do not have the required permissions for that command.");
     client.commands.get('reactions').execute(message, args);
   } else if (command === 'buffs') {
     client.commands.get('buffs').execute(message, args);
