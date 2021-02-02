@@ -6,6 +6,8 @@ module.exports = {
   async execute (client, message, args) {
 
     async function raffle() {
+
+    if (!message.author.hasPermission("ADMINISTRATOR")) return message.reply("You do not have permission for that command.")
     
     if (!args.length) {
       return message.channel.send("Please specify a length of time in hours.")
