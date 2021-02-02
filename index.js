@@ -118,7 +118,7 @@ client.on('message', message => {
   if (command === 'map') {
     client.commands.get('map').execute(message, args);
   } else if (command === 'raffle') {
-    if (!message.member.hasPermission(["ADMINISTRATOR"])) return message.channel.send("You do not have the required permissions for that command.");
+    if (!member.roles.cache.some(role => role.name === 'Seneschal')) return message.channel.send("You do not have the required permissions for that command.");
     client.commands.get('raffle').execute(client, message, args);
   } else if (command === 'reactions') {
     client.commands.get('reactions').execute(message, args);
