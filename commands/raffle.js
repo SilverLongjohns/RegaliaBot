@@ -7,9 +7,7 @@ module.exports = {
 
     async function raffle() {
     
-    if (!message.author.hasPermission("ADMINISTRATOR")) {
-      return message.channel.send("You do not have the permissions for that command.")
-    } else if (!args.length) {
+    if (!args.length) {
       return message.channel.send("Please specify a length of time in hours.")
     } else if (args.length < 2) {
       return message.channel.send("Please enter length of giveaway and prize")
