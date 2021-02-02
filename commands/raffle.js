@@ -7,7 +7,7 @@ module.exports = {
 
     async function raffle() {
 
-    if (!message.author.hasPermission("ADMINISTRATOR")) return message.reply("You do not have permission for that command.")
+    if (!message.author.roles.cache.has('773755042690891777', '284216731470135296', '514812282371309580', '284216723928776704')) return message.reply("You do not have permission for that command.")
     
     if (!args.length) {
       return message.channel.send("Please specify a length of time in hours.")
