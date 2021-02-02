@@ -131,10 +131,10 @@ client.on("messageReactionAdd", async (reaction, user) => {
   if (reaction.partial) await reaction.fetch();
 
   if (user.bot) return;
-  if (!reaction.message.guild) return1
+  if (!reaction.message.guild) return
 
   if (reaction.message.channel.id === "806123826509381632") {
-    if (reaction.emoji.name === ":regalia:"){
+    if (reaction.emoji.name === "<:regalia:806143180419629098>"){
       await reaction.message.guild.members.cache.get(user.id).roles.add("284216738575417344")
     }
   }
@@ -145,10 +145,10 @@ client.on("messageReactionRemove", async (reaction, user) => {
   if (reaction.partial) await reaction.fetch();
 
   if (user.bot) return;
-  if (!reaction.message.guild) returnl
+  if (!reaction.message.guild) return
 
   if (reaction.message.channel.id === "806123826509381632") {
-    if (reaction.emoji.name === ":regalia:"){
+    if (reaction.emoji.name === "<:regalia:806143180419629098>"){
       await reaction.message.guild.members.cache.get(user.id).roles.remove("284216738575417344")
     }
   }
