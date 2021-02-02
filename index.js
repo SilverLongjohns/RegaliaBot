@@ -36,8 +36,6 @@ client.on('guildMemberAdd', member => {
 
   console.log(member)
 
-  member.send("Howdy! Welcome to Regalia. Please change your name to match your FFXIV one, and a mod will be about shortly to give you perms.")
-
   client.channels.cache.get(chatID).send(introEmbed);
 
 });
