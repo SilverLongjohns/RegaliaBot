@@ -9,7 +9,8 @@ module.exports = {
     })
 
     let embed = new Discord.MessageEmbed()
-    .setDescription("Hello, new member!\nTo get started, **change your Discord name to your in-game name.**\nKindly follow this format: **[ First Name ] [ Last Name ]**\n\n`Right-click on your name in the list, and select Change Nickname`\n\nAfterwards, **click on the icon below** to join the rest of the members in the discussions")
+    .setTitle("Hello, new member!")
+    .setDescription("To get started, **change your Discord name to your in-game name.**\nKindly follow this format: **[ First Name ] [ Last Name ]**\n\n`Right-click on your name in the list, and select Change Nickname`\n\nAfterwards, **click on the icon below** to join the rest of the members in the discussions")
 
     let msgEmbed = await message.channel.send(embed)
 
