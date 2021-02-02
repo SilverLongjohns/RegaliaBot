@@ -126,7 +126,7 @@ client.on('message', message => {
   }
 });
 
-client.on("messageReactionAdd", async (client, reaction, user) => {
+client.on("messageReactionAdd", async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
   if (reaction.partial) await reaction.fetch();
 
@@ -135,12 +135,12 @@ client.on("messageReactionAdd", async (client, reaction, user) => {
 
   if (reaction.message.channel.id === "806123826509381632") {
     if (reaction.emoji.name === "🏰"){
-      await client.users.fetch(user.id).roles.add("284216738575417344")
+      await reaction.message.guild.members.fetch(user.id).roles.add("284216738575417344")
     }
   }
 })
 
-client.on("messageReactionRemove", async (client, reaction, user) => {
+client.on("messageReactionRemove", async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
   if (reaction.partial) await reaction.fetch();
 
@@ -149,7 +149,7 @@ client.on("messageReactionRemove", async (client, reaction, user) => {
 
   if (reaction.message.channel.id === "806123826509381632") {
     if (reaction.emoji.name === "🏰"){
-      await client.users.fetch(user.id).roles.remove("284216738575417344")
+      await reaction.message.guild.members.fetch(user.id).roles.remove("284216738575417344")
     }
   }
 })
