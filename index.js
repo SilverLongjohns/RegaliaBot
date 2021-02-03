@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const prefix = "!"
-const token = "Nzc1MzU2OTg2NzA2NzU1NjA0.X6lJdw.HtBoUNCWqTFgSJh2HKygkqMsryo"
+const token = "SECRET"
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 client.commands = new Discord.Collection();
