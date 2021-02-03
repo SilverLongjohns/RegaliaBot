@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const prefix = process.env.prefix
-const token = process.env.token
+const prefix = "!"
+const token = "Nzc1MzU2OTg2NzA2NzU1NjA0.X6lJdw.HtBoUNCWqTFgSJh2HKygkqMsryo"
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 client.commands = new Discord.Collection();
@@ -25,6 +25,12 @@ client.login(token);
 // User joins server: logging
 
 client.on('guildMemberAdd', member => {
+
+  var role = member.guild.roles.cache.get("806169048265392148");
+
+  if (!member.roles.cache.has("806169048265392148")) {
+    member.roles.add(role).catch(console.error);
+  }
 
   const introEmbed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
@@ -108,6 +114,12 @@ client.on('messageDelete', message => {
 
 client.on('message', message => {
 
+  if (message.channel.id === "806123826509381632") {
+    if (message.content.toLowerCase() !== "!greentea" && !message.author.bot) {
+      message.delete();
+    }
+  }
+
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.toLowerCase().slice(prefix.length).trim().split(/ +/);
@@ -118,9 +130,9 @@ client.on('message', message => {
   } else if (command === 'raffle') {
     if (!message.member.roles.cache.some(role => role.name === 'Seneschal' || 'Architect' || 'Patriarch' || 'Matriarch')) return message.channel.send("You do not have the required permissions for that command.");
     client.commands.get('raffle').execute(client, message, args);
-  } else if (command === 'reactions') {
-    if (!message.member.roles.cache.some(role => role.name === 'Patriarch' || 'Matriarch')) return message.channel.send("You do not have the required permissions for that command.");
-    client.commands.get('reactions').execute(message, args);
+  } else if (command === 'greentea') {
+    if (!message.channel.id === "806123826509381632") return;
+    client.commands.get('greentea').execute(message, args);
   } else if (command === 'buffs') {
     client.commands.get('buffs').execute(message, args);
   }
@@ -135,8 +147,10 @@ client.on("messageReactionAdd", async (reaction, user) => {
 
   if (reaction.message.channel.id === "806123826509381632") {
     if (reaction.emoji.name === "🏰"){
-      await reaction.message.guild.members.fetch(user.id).roles.add("284216738575417344")
+      await reaction.message.guild.members.cache.get(user.id).roles.add("284216738575417344");
+      reaction.message.guild.members.cache.get(user.id).roles.remove("806169048265392148");
     }
+    reaction.message.delete()
   }
 })
 
@@ -149,7 +163,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
 
   if (reaction.message.channel.id === "806123826509381632") {
     if (reaction.emoji.name === "🏰"){
-      await reaction.message.guild.members.fetch(user.id).roles.remove("284216738575417344")
+      await reaction.message.guild.members.cache.get(user.id).roles.remove("284216738575417344")
     }
   }
 })

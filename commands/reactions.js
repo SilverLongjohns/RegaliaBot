@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports = {
-  name: 'reactions',
+  name: 'greentea',
 
   async execute (message, args) {
       message.channel.messages.fetch({limit: 1}).then (messages => {
