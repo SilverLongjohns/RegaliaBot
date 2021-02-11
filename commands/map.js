@@ -315,7 +315,7 @@ module.exports = {
       } else if (args[0] === "5") {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
-          .setTitle("This is my collection of treasure maps available for Raktika Greatwood!)
+          .setTitle("This is my collection of treasure maps available for Raktika Greatwood!")
           .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
           .setImage("https://i.imgur.com/mEQbudw.png")
           .setTimestamp();
