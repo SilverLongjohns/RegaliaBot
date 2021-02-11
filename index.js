@@ -1,8 +1,8 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const reactions = require('./commands/reactions');
-const prefix = "!"
-const token = ""
+const prefix = process.env.prefix
+const token = process.env.token
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 client.commands = new Discord.Collection();
