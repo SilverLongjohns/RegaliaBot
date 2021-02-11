@@ -129,7 +129,7 @@ client.on('message', message => {
   if (command === 'map') {
     client.commands.get('map').execute(message, args);
   } else if (command === 'raffle') {
-    if (!message.member.roles.cache.some(role => role.name === 'Seneschal' || 'Architect' || 'Patriarch' || 'Matriarch')) return message.channel.send("You do not have the required permissions for that command.");
+    if (!message.member.roles.cache.some(role => role.name === 'Seneschal' || 'Architect' || 'Patriarch' || 'Matriarch')) return message.channel.send("Hello! Are you interested to hold a **raffle** or **giveaway?**\nKindly approach one of the **moderators** to help you!");
     client.commands.get('raffle').execute(client, message, args);
   } else if (command === 'greentea') {
     if (!message.channel.id === "806123826509381632") return;

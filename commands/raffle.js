@@ -8,20 +8,20 @@ module.exports = {
     async function raffle() {
     
     if (!args.length) {
-      return message.channel.send("Please specify a length of time in hours.")
+      return message.channel.send("Hello! Are you about to hold a **raffle** or **giveaway**? Allow me to help you set it up!\n\n*Please specify a **length of time in hours**, followed by the **name of the prize.***\n`Example: !raffle 0.5 :gil: 1,000,000, !raffle 1 Fat Cat minion, !raffle 72 50 Glamour Prisms`")
     } else if (args.length < 2) {
-      return message.channel.send("Please enter length of giveaway and prize")
+      return message.channel.send("Oh dear, I'm afraid you need to give me more information!\n\n*Please specify a **length of time in hours**, followed by the **name of the prize.***\n`Example: !raffle 0.5 :gil: 1,000,000, !raffle 1 Fat Cat minion, !raffle 72 50 Glamour Prisms`")
     } else if (isNaN(args[0])) {
-      return message.channel.send("Please enter a valid number for length of giveaway")
+      return message.channel.send("Oh dear, I'm afraid you need to give me more information!\n\n*Please specify a **length of time in hours**, followed by the **name of the prize.***\n`Example: !raffle 0.5 :gil: 1,000,000, !raffle 1 Fat Cat minion, !raffle 72 50 Glamour Prisms`")
     } else if (args[0] > 7500) {
-      return message.channel.send("A giveaway cannot last longer than a month.")
+      return message.channel.send("I'm sorry! A giveaway cannot last longer than a month!\n\n*Please specify a **length of time in hours**, followed by the **name of the prize.***\n`Example: !raffle 0.5 :gil: 1,000,000, !raffle 1 Fat Cat minion, !raffle 72 50 Glamour Prisms`")
     } else {
 
     let hour_s = "hour"
 
     let time = args[0]
-    // let actual_duration_hours = time * 3600000 //hour
-    let actual_duration_hours = time * 60000 //minute
+    let actual_duration_hours = time * 3600000 //hour
+    // let actual_duration_hours = time * 60000 //minute
     let input = []
 
     for (let i=1; i < args.length; i++){
@@ -31,35 +31,35 @@ module.exports = {
     let prize = input.join(" ")
     
     const embed = new Discord.MessageEmbed()
-    .setTitle(`Raffle for ${prize}!`)
+    .setTitle(`🎁 ${prize}`)
     .setColor('36393F')
-    .setDescription(`React with 🔥 to enter!\nTime duration: **${time}** ${hour_s}\nHosted by: ${message.author}`)
+    .setDescription(`Raffle ends in: **${time}** ${hour_s}\n*To join, simply **click on the Reaction below!***\nGood luck to everyone participating!`)
     .setTimestamp(Date.now() + (time *60*60*1000))
     .setFooter('Ends at')
-    let msg = await message.channel.send('🔥 **GIVEAWAY** 🔥', embed)
+    let msg = await message.channel.send(':stars: REGALIA RAFFLE :stars:', embed)
 
-    await msg.react("🔥")
+    await msg.react("🎁")
     setTimeout(() => {
-      msg.reactions.cache.get('🔥').users.remove(client.user.id)
+      msg.reactions.cache.get('🎁').users.remove(client.user.id)
     setTimeout(() => {
-      let winner = msg.reactions.cache.get("🔥").users.cache.random();
-      if (msg.reactions.cache.get("🔥").users.cache.size < 1) {
+      let winner = msg.reactions.cache.get("🎁").users.cache.random();
+      if (msg.reactions.cache.get("🎁").users.cache.size < 1) {
         const winner_embed = new Discord.MessageEmbed()
-        .setTitle(`Raffle for ${prize}!`)
+        .setTitle(`🎁 ${prize}`)
         .setColor('36393F')
-        .setDescription(`No entrants!\nHosted by: ${message.author}`)
+        .setDescription(`Sorry, not enough participants this time!`)
         .setTimestamp()
         .setFooter('Ended at')
-        msg.edit('🔥 **GIVEAWAY ENDED** 🔥', winner_embed);
+        msg.edit(':fireworks: RAFFLE ENDED :fireworks:', winner_embed);
       }
-      if (!msg.reactions.cache.get('🔥').users.cache.size < 1) {
+      if (!msg.reactions.cache.get('🎁').users.cache.size < 1) {
         const winner_embed = new Discord.MessageEmbed()
-        .setTitle(`${prize}`)
+        .setTitle(`🎁 ${prize}`)
         .setColor('36393F')
-        .setDescription(`Winner:\n${winner}\nHosted by: ${message.author}`)
+        .setDescription(`The **winner** is ${winner}!\nCongratulations, and thank you for joining!`)
         .setTimestamp()
         .setFooter('Ended at')
-        msg.edit('🔥 **GIVEAWAY ENDED** 🔥', winner_embed);
+        msg.edit(':fireworks: RAFFLE ENDED :fireworks:', winner_embed);
       }
     }, 1000)
   }, actual_duration_hours);
