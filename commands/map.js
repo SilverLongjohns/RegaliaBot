@@ -82,10 +82,10 @@ module.exports = {
 	              .setTimestamp();
                 return message.channel.send(mapEmbed);
         } else {
-          return message.channel.send('Invalid selection.')
+          return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
         }
       }).catch(() => {
-        message.reply('No selection after 10 seconds. Request cancelled.')
+        message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
       })
     } else if (args[0] === "2") {
       let callEmbedB = new Discord.MessageEmbed()
@@ -158,10 +158,10 @@ module.exports = {
                     .setTimestamp();
                     return message.channel.send(mapEmbed);
             } else {
-              return message.channel.send('Invalid selection.')
+              return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
             }
           }).catch(() => {
-            message.reply('No selection after 10 seconds. Request cancelled.')
+            message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
           })
 
     } else if (args[0] === "3") {
@@ -233,10 +233,10 @@ module.exports = {
                     .setTimestamp();
                     return message.channel.send(mapEmbed);
             } else {
-              return message.channel.send('Invalid selection.')
+              return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
             }
           }).catch(() => {
-            message.reply('No selection after 10 seconds. Request cancelled.')
+            message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
           })
       } else if (args[0] === "4") {
         let callEmbedB = new Discord.MessageEmbed()
@@ -307,10 +307,10 @@ module.exports = {
                       .setTimestamp();
                       return message.channel.send(mapEmbed);
               } else {
-                return message.channel.send('Invalid selection.')
+                return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
               }
             }).catch(() => {
-              message.reply('No selection after 10 seconds. Request cancelled.')
+              message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
             })
       } else if (args[0] === "5") {
         let callEmbedB = new Discord.MessageEmbed()
@@ -381,10 +381,10 @@ module.exports = {
                       .setTimestamp();
                       return message.channel.send(mapEmbed);
               } else {
-                return message.channel.send('Invalid selection.')
+                return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
               }
               }).catch(() => {
-                message.reply('No selection after 10 seconds. Request cancelled.')
+                message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
               })
 
         } else if (args[0] === "6") {
@@ -457,10 +457,10 @@ module.exports = {
                       .setTimestamp();
                       return message.channel.send(mapEmbed);
               }  else {
-                return message.channel.send('Invalid selection.')
+                return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
               }
             }).catch(() => {
-              message.reply('No selection after 30 seconds. Request cancelled.')
+              message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
             })
       } else {
       message.channel.send("Hello there!\nNeed my help in finding Zonureskin Treasure Maps?\nWhich location is indicated on your map?\n\nTo select, please respond with !map, followed by the corresponding number of your map location.\n`Example: !map 1`\n\n```!map 1: Lakeland\n!map 2: Amh Araeng\n!map 3: Kholusia\n!map 4: Il Mheg\n!map 5: Raktika Greatwood\n!map 6: Tempest```")
