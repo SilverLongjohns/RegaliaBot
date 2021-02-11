@@ -140,6 +140,8 @@ client.on('message', message => {
     client.commands.get('buffs').execute(message, args);
   } else if (command === 'random') {
     client.commands.get('random').execute(message, args);
+  } else if (command === 'help') {
+    client.commands.get('help').execute(message, args);
   }
 });
 
