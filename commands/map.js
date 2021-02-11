@@ -16,7 +16,8 @@ module.exports = {
 
   let callEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle("Lakeland selected, please reply with the letter of your choice:")
+        .setTitle("This is my collection of treasure maps available for Lakeland!")
+        .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
         .setImage("https://i.imgur.com/8Khirwm.png")
         .setTimestamp();
 
@@ -89,7 +90,8 @@ module.exports = {
     } else if (args[0] === "2") {
       let callEmbedB = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle("Amh Araeng selected, please reply with the letter of your choice:")
+        .setTitle("This is my collection of treasure maps available for Ahm Araeng!")
+        .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
         .setImage("https://i.imgur.com/efUWKth.png")
         .setTimestamp();
 
@@ -165,7 +167,8 @@ module.exports = {
     } else if (args[0] === "3") {
       let callEmbedB = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle("Kholusia selected, please reply with the letter of your choice:")
+        .setTitle("This is my collection of treasure maps available for Kholusia!")
+        .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
         .setImage("https://i.imgur.com/9739Zwt.png")
         .setTimestamp();
 
@@ -238,7 +241,8 @@ module.exports = {
       } else if (args[0] === "4") {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
-          .setTitle("Il Mheg selected, please reply with the letter of your choice:")
+          .setTitle("This is my collection of treasure maps available for Il Mheg!")
+          .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
           .setImage("https://i.imgur.com/fvNIYIN.png")
           .setTimestamp();
   
@@ -311,7 +315,8 @@ module.exports = {
       } else if (args[0] === "5") {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
-          .setTitle("Raktika Greatwood selected, please reply with the letter of your choice:")
+          .setTitle("This is my collection of treasure maps available for Raktika Greatwood!)
+          .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
           .setImage("https://i.imgur.com/mEQbudw.png")
           .setTimestamp();
   
@@ -386,7 +391,8 @@ module.exports = {
 
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
-          .setTitle("Tempest selected, please reply with the letter of your choice:")
+          .setTitle("This is my collection of treasure maps available for the Tempest!")
+          .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
           .setImage("https://i.imgur.com/rls3lSe.png")
           .setTimestamp();
   
@@ -457,7 +463,7 @@ module.exports = {
               message.reply('No selection after 30 seconds. Request cancelled.')
             })
       } else {
-      message.channel.send("```Please select your location:\n!map 1: Lakeland\n!map 2: Amh Araeng\n!map 3: Kholusia\n!map 4: Il Mheg\n!map 5: Raktika Greatwood\n!map 6: Tempest```")
+      message.channel.send("Hello there!\nNeed my help in finding Zonureskin Treasure Maps?\nWhich location is indicated on your map?\n\nTo select, please respond with !map, followed by the corresponding number of your map location.\n`Example: !map 1`\n\n```!map 1: Lakeland\n!map 2: Amh Araeng\n!map 3: Kholusia\n!map 4: Il Mheg\n!map 5: Raktika Greatwood\n!map 6: Tempest```")
     }
   } 
 }
