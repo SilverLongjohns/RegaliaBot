@@ -16,8 +16,8 @@ module.exports = {
 
   let callEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle("This is my collection of treasure maps available for Lakeland!")
-        .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
+        .setTitle("This is my collection of treasure maps available for **Lakeland!**")
+        .setDescription("Which one matches with yours?\n\n*To select, please respond with the corresponding **letter** of your map location.*\n`Example: A`")
         .setImage("https://i.imgur.com/8Khirwm.png")
         .setTimestamp();
 
@@ -91,7 +91,7 @@ module.exports = {
       let callEmbedB = new Discord.MessageEmbed()
         .setColor('#0099ff')
         .setTitle("This is my collection of treasure maps available for Ahm Araeng!")
-        .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
+        .setDescription("Which one matches with yours?\n\n*To select, please respond with the corresponding **letter** of your map location.*\n`Example: A`")
         .setImage("https://i.imgur.com/efUWKth.png")
         .setTimestamp();
 
@@ -168,7 +168,7 @@ module.exports = {
       let callEmbedB = new Discord.MessageEmbed()
         .setColor('#0099ff')
         .setTitle("This is my collection of treasure maps available for Kholusia!")
-        .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
+        .setDescription("Which one matches with yours?\n\n*To select, please respond with the corresponding **letter** of your map location.*\n`Example: A`")
         .setImage("https://i.imgur.com/9739Zwt.png")
         .setTimestamp();
 
@@ -242,7 +242,7 @@ module.exports = {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
           .setTitle("This is my collection of treasure maps available for Il Mheg!")
-          .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
+          .setDescription("Which one matches with yours?\n\n*To select, please respond with the corresponding **letter** of your map location.*\n`Example: A`")
           .setImage("https://i.imgur.com/fvNIYIN.png")
           .setTimestamp();
   
@@ -316,7 +316,7 @@ module.exports = {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
           .setTitle("This is my collection of treasure maps available for Raktika Greatwood!")
-          .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
+          .setDescription("Which one matches with yours?\n\n*To select, please respond with the corresponding **letter** of your map location.*\n`Example: A`")
           .setImage("https://i.imgur.com/mEQbudw.png")
           .setTimestamp();
   
@@ -392,7 +392,7 @@ module.exports = {
         let callEmbedB = new Discord.MessageEmbed()
           .setColor('#0099ff')
           .setTitle("This is my collection of treasure maps available for the Tempest!")
-          .setDescription("Which one matches with yours?\n\nTo select, please respond with the corresponding letter of your map location.\n`Example: A`")
+          .setDescription("Which one matches with yours?\n\n*To select, please respond with the corresponding **letter** of your map location.*\n`Example: A`")
           .setImage("https://i.imgur.com/rls3lSe.png")
           .setTimestamp();
   
@@ -463,7 +463,7 @@ module.exports = {
               message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
             })
       } else {
-      message.channel.send("Hello there!\nNeed my help in finding Zonureskin Treasure Maps?\nWhich location is indicated on your map?\n\nTo select, please respond with !map, followed by the corresponding number of your map location.\n`Example: !map 1`\n\n```!map 1: Lakeland\n!map 2: Amh Araeng\n!map 3: Kholusia\n!map 4: Il Mheg\n!map 5: Raktika Greatwood\n!map 6: Tempest```")
+      message.channel.send("Hello there!\nNeed my help in finding **Zonureskin Treasure Maps?**\nWhich **location** is indicated on your map?\n\n*To select, please respond with **!map**, followed by the corresponding **number** of your map location.*\n`Example: !map 1`\n\n```!map 1: Lakeland\n!map 2: Amh Araeng\n!map 3: Kholusia\n!map 4: Il Mheg\n!map 5: Raktika Greatwood\n!map 6: Tempest```")
     }
   } 
 }
