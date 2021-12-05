@@ -1,10 +1,16 @@
-const { lakelanda, lakelandb, lakelandc, lakelandd, lakelande, lakelandf, lakelandg, lakelandh,
-        amha, amhb, amhc, amhd, amhe, amhf, amhg, amhh,
-        ilmhega, ilmhegb, ilmhegc, ilmhegd, ilmhege, ilmhegf, ilmhegg, ilmhegh,
-        raka, rakb, rakc, rakd, rake, rakf, rakg, rakh,
-        tempa, tempb, tempc, tempd, tempe, tempf, tempg, temph,
-        khoa, khob, khoc, khod, khoe, khof, khog, khoh } = require('../imagedata.json')
+const imagedata = require('../imagedata.json')
 const Discord = require('discord.js')
+
+const validOptions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+let selectMap = (zone, mapSelection, title) => {
+  let mapEmbed = new Discord.MessageEmbed()
+                .setColor('#0099ff')
+                .setTitle(title.toUpperCase())
+                .setImage(imagedata[zone][mapSelection])
+                .setTimestamp();
+                return mapEmbed;
+}
 
 module.exports = {
   name: 'map',
@@ -25,66 +31,14 @@ module.exports = {
 
   await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
     {max: 1, time: 30000}).then(collected => {
-        if (collected.first().content.toLowerCase() == "a") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelanda)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
-        } else if (collected.first().content.toLowerCase() == "b") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelandb)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
-        } else if (collected.first().content.toLowerCase() == "c") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelandc)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
-        } else if (collected.first().content.toLowerCase() == "d") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelandd)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
-        } else if (collected.first().content.toLowerCase() == "e") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelande)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
-        } else if (collected.first().content.toLowerCase() == "f") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelandf)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
-        } else if (collected.first().content.toLowerCase() == "g") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelandg)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
-        } else if (collected.first().content.toLowerCase() == "h") {
-          let mapEmbed = new Discord.MessageEmbed()
-                .setColor('#0099ff')
-                .setTitle(collected.first().content.toUpperCase())
-                .setImage(lakelandh)
-	              .setTimestamp();
-                return message.channel.send(mapEmbed);
+      const selectedOption = collected.first().content.toLowerCase();
+        if (validOptions.includes(selectedOption)) {
+          message.channel.send(selectMap('lakeland', validOptions.indexOf(selectedOption), selectedOption))
         } else {
           return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
         }
-      }).catch(() => {
+      }).catch(e => {
+        console.log(e);
         message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
       })
     } else if (args[0] === "2") {
@@ -97,70 +51,16 @@ module.exports = {
 
       await message.channel.send(callEmbedB);
 
-      //what lies beyond is a horror from beyond the stars. Turn back.
-
       await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
         {max: 1, time: 5000}).then(collected => {
-            if (collected.first().content.toLowerCase() == "a") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amha)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "b") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amhb)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "c") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amhc)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "d") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amhd)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "e") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amhe)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "f") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amhf)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "g") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amhg)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "h") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(amhh)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
+          const selectedOption = collected.first().content.toLowerCase();
+            if (validOptions.includes(selectedOption)) {
+              message.channel.send(selectMap('amh', validOptions.indexOf(selectedOption), selectedOption))
             } else {
               return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
             }
-          }).catch(() => {
+          }).catch(e => {
+            console.log(e);
             message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
           })
 
@@ -176,66 +76,14 @@ module.exports = {
 
       await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
         {max: 1, time: 5000}).then(collected => {
-            if (collected.first().content.toLowerCase() == "a") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khoa)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "b") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khob)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "c") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khoc)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "d") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khod)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "e") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khoe)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "f") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khof)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "g") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khog)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
-            } else if (collected.first().content.toLowerCase() == "h") {
-              let mapEmbed = new Discord.MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(collected.first().content.toUpperCase())
-                    .setImage(khoh)
-                    .setTimestamp();
-                    return message.channel.send(mapEmbed);
+          const selectedOption = collected.first().content.toLowerCase();
+            if (validOptions.includes(selectedOption)) {
+              message.channel.send(selectMap('kho', validOptions.indexOf(selectedOption), selectedOption))
             } else {
               return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
             }
-          }).catch(() => {
+          }).catch(e => {
+            console.log(e);
             message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
           })
       } else if (args[0] === "4") {
@@ -250,66 +98,14 @@ module.exports = {
   
         await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
           {max: 1, time: 5000}).then(collected => {
-              if (collected.first().content.toLowerCase() == "a") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhega)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "b") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhegb)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "c") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhegc)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "d") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhegd)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "e") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhege)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "f") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhegf)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "g") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhegg)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "h") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(ilmhegh)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
+            const selectedOption = collected.first().content.toLowerCase();
+            if (validOptions.includes(selectedOption)) {
+              message.channel.send(selectMap('ilmheg', validOptions.indexOf(selectedOption), selectedOption))
               } else {
                 return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
               }
-            }).catch(() => {
+            }).catch(e => {
+              console.log(e);
               message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
             })
       } else if (args[0] === "5") {
@@ -324,66 +120,14 @@ module.exports = {
   
         await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
           {max: 1, time: 5000}).then(collected => {
-              if (collected.first().content.toLowerCase() == "a") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(raka)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "b") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(rakb)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "c") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(rakc)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "d") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(rakd)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "e") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(rake)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "f") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(rakf)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "g") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(rakg)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "h") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(rakh)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
+            const selectedOption = collected.first().content.toLowerCase();
+            if (validOptions.includes(selectedOption)) {
+              message.channel.send(selectMap('rak', validOptions.indexOf(selectedOption), selectedOption))
               } else {
                 return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
               }
-              }).catch(() => {
+              }).catch(e => {
+                console.log(e);
                 message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
               })
 
@@ -400,66 +144,14 @@ module.exports = {
   
         await message.channel.awaitMessages(msg => msg.author.id == message.author.id,
           {max: 1, time: 30000}).then(collected => {
-              if (collected.first().content.toLowerCase() == "a") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(tempa)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "b") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(tempb)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "c") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(tempc)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "d") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(tempd)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "e") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(tempe)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "f") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(tempf)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "g") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(tempg)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
-              } else if (collected.first().content.toLowerCase() == "h") {
-                let mapEmbed = new Discord.MessageEmbed()
-                      .setColor('#0099ff')
-                      .setTitle(collected.first().content.toUpperCase())
-                      .setImage(temph)
-                      .setTimestamp();
-                      return message.channel.send(mapEmbed);
+            const selectedOption = collected.first().content.toLowerCase();
+            if (validOptions.includes(selectedOption)) {
+              message.channel.send(selectMap('temp', validOptions.indexOf(selectedOption), selectedOption))
               }  else {
                 return message.channel.send("Aww, I'm sorry. I didn't quite get that! Could you try again, please?")
               }
-            }).catch(() => {
+            }).catch(e => {
+              console.log(e);
               message.reply("Do you need a bit more time to look through it? It's no problem, take your time!")
             })
       } else {
